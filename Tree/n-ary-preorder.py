@@ -26,7 +26,6 @@ The number of nodes in the tree is in the range [0, 104].
 0 <= Node.val <= 104
 The height of the n-ary tree is less than or equal to 1000.
 
-
 Follow up: Recursive solution is trivial, could you do it iteratively?
 
 """
