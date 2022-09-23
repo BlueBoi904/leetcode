@@ -8,7 +8,7 @@ Example 1:
 
 Input: n = 1
 Output: 1
-Explanation: "1" in binary corresponds to the decimal value 1. 
+Explanation: "1" in binary corresponds to the decimal value 1.
 Example 2:
 
 Input: n = 3
@@ -32,4 +32,15 @@ Constraints:
 
 
 def concatenatedBinary(n: int):
-    pass
+    res = ''
+    for i in range(1, n + 1):
+        res += bin(i).replace("0b", "")
+    print(res)
+    res = int(res, 2)
+    print(res)
+    return res % ((10 ** 9) + 7)
+
+
+# concatenatedBinary(1)  # => 1
+concatenatedBinary(3)  # => 27
+# concatenatedBinary(12)  # => 505379714
