@@ -51,15 +51,15 @@ def pivotIndex(nums):
 
 def pivot_index(nums):
     leftSum = 0
-      S = sum(nums)
-       for i in range(len(nums)):
-            rightSum = (S - leftSum - nums[i])
-            if leftSum == rightSum:
-                return i
-            leftSum += nums[i]
+    S = sum(nums)
+    for i in range(len(nums)):
+        rightSum = (S - leftSum - nums[i])
+        if leftSum == rightSum:
+            return i
+        leftSum += nums[i]
 
-        # No pivot index was found
-        return -1
+    # No pivot index was found
+    return -1
 
 
 print(pivot_index([1, 7, 3, 6, 5, 6]))
