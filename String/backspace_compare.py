@@ -32,4 +32,35 @@ s and t only contain lowercase letters and '#' characters.
 
 
 def backspaceCompare(s, t):
-    pass
+    if s == '#':
+        return ''
+    res_s = []
+    res_t = []
+
+    for item in s:
+        res_s.append(item)
+
+    for item in t:
+        res_t.append(item)
+
+    def remove_backspace(arr):
+        left, right = 0, 1
+
+        while right < len(arr):
+            if arr[right] == '#':
+                arr[left] = ''
+
+            left += 1
+            right += 1
+
+        return arr
+
+    remove_backspace(res_s)
+    remove_backspace(res_t)
+
+    return ''.join(res_t) == ''.join(res_s)
+
+    return s == t
+
+
+backspaceCompare()
