@@ -22,4 +22,5 @@ Output: [1]
 
 
 def remove_nth_node(head, n: int):
-    pass
+
+    left = right = head
