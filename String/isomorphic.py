@@ -40,16 +40,7 @@ from collections import Counter
 
 
 def isIsomorphic(s: str, t: str):
-    s_map = {}
-    t_map = {}
-    for sc, tc in zip(s, t):
-        if sc not in s_map:
-            s_map[sc] = tc
-        if tc not in t_map:
-            t_map[tc] = sc
-        if sc != t_map[tc] or tc != s_map[sc]:
-            return False
-    return True
+    return len(set(s)) == len(set(t)) == len(set(zip(s, t)))
 
 
 isIsomorphic("egg", "add")  # => True

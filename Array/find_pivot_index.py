@@ -50,15 +50,12 @@ def pivotIndex(nums):
 
 
 def pivot_index(nums):
-    leftSum = 0
     S = sum(nums)
-    for i in range(len(nums)):
-        rightSum = (S - leftSum - nums[i])
-        if leftSum == rightSum:
+    leftsum = 0
+    for i, num in enumerate(nums):
+        if leftsum == (S - leftsum - num):
             return i
-        leftSum += nums[i]
-
-    # No pivot index was found
+        leftsum += num
     return -1
 
 
