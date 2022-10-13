@@ -24,4 +24,12 @@ Constraints:
 
 
 def threeConsecutiveOdds(arr):
-    pass
+    def is_odd(num):
+        return num % 2 != 0
+
+    for i in range(0, len(arr)):
+        p1, p2, p3 = i, i + 1, i + 2
+        if p3 < len(arr) and is_odd(arr[p1]) and is_odd(arr[p2]) and is_odd(arr[p3]):
+            return True
+
+    return False
