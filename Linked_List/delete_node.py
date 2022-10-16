@@ -42,7 +42,13 @@ The node to be deleted is in the list and is not a tail node.
 
 """
 
-# Definition for singly-linked list.
+# Store the next node in a temporary variable.
+
+# Copy data of the next node to the current node.
+
+# Change the next pointer of the current node to the next pointer of the next node.
+
+# Note: Above 3 steps makes sure that your current node becomes same as next node and then you can safely delete next node from the Linked List
 
 
 class ListNode:
@@ -57,3 +63,11 @@ class Solution:
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
+        # Since we know input node is not last node, so nextNode will not be null
+        nextNode = node.next
+        # Step 2
+        node.val = nextNode.val
+        # Step 3
+        node.next = nextNode.next
+        nextNode.next = None
+        del (nextNode)
