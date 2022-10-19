@@ -37,6 +37,14 @@ Submissions
 
 """
 
+from collections import Counter
+
 
 def topKFrequent(words: list):
-    pass
+    res = []
+    counts = Counter(words)
+    sorted_counts = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+
+    sortdict = dict(sorted_counts)
+
+    return list(sortdict.keys())[0:k]
