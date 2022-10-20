@@ -1,5 +1,6 @@
 """
 
+<<<<<<< HEAD
 692. Top K Frequent Words
 Medium
 5.3K
@@ -10,6 +11,8 @@ company
 Uber
 company
 Bloomberg
+=======
+>>>>>>> cf51ad380537965b083851501812a42f8083dc0a
 Given an array of strings words and an integer k, return the k most frequent strings.
 
 Return the answer sorted by the frequency from highest to lowest. Sort the words with the same frequency by their lexicographical order.
@@ -39,8 +42,30 @@ k is in the range [1, The number of unique words[i]]
 
 Follow-up: Could you solve it in O(n log(k)) time and O(n) extra space?
 
+<<<<<<< HEAD
 """
 
 
 def top_k_freq(words: list):
     pass
+=======
+Accepted
+477.3K
+Submissions
+846.6K
+
+
+"""
+
+from collections import Counter
+
+
+def topKFrequent(words: list):
+    res = []
+    counts = Counter(words)
+    sorted_counts = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+
+    sortdict = dict(sorted_counts)
+
+    return list(sortdict.keys())[0:k]
+>>>>>>> cf51ad380537965b083851501812a42f8083dc0a
