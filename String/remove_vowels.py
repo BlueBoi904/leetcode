@@ -18,4 +18,10 @@ Output: ""
 
 def remove_vowels(s):
     # Remove any char that is a va
+    new_string = ''
     vowel_list = ['a', 'e', 'i', 'o', 'u']
+    for char in s:
+        if char not in vowel_list:
+            new_string += char
+
+    return new_string
