@@ -36,9 +36,20 @@ Constraints:
 
 
 def containsNearbyDuplicate(nums: list, k: int):
-    pass
+    lookup = {}
+
+    for i in range(len(nums)):
+        num = nums[i]
+        # If num is present in lookup and satisfy the condition return True
+        if num in lookup and abs(lookup[num]-i) <= k:
+            return True
+
+        # If num is not present in lookup then add it to lookup
+        lookup[num] = i
+
+    return False
 
 
-containsNearbyDuplicate([1, 2, 3, 1], 3)  # => true
-containsNearbyDuplicate([1, 0, 1, 1], 1)  # => true
-containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2)  # => false
+print(containsNearbyDuplicate([1, 2, 3, 1], 3))  # => true
+print(containsNearbyDuplicate([1, 0, 1, 1], 1))  # => true
+print(containsNearbyDuplicate([1, 2, 3, 1, 2, 3], 2))  # => false
