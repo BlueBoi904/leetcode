@@ -23,3 +23,19 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 
     """
+
+
+def climbStairs(n: int) -> int:
+    def helper(x, memo={}):
+        if x == 2:
+            return 2
+
+        if x == 1:
+            return 1
+
+        if x not in memo:
+            memo[x] = helper(x - 2) + helper(x - 1)
+
+        return memo[x]
+
+    return helper(n)

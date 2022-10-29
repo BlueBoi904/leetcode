@@ -27,12 +27,11 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 """
 
 
-def fib(n):
-    if n == 2:
-        return 1
-    if n == 1:
-        return 1
-    if n == 0:
-        return 0
+class Solution:
+    def fib(self, n: int) -> int:
+        if n == 1:
+            return 1
+        if n == 0:
+            return 0
 
-    return fib(n - 1) + fib(n - 2)
+        return self.fib(n - 2) + self.fib(n - 1)
