@@ -29,20 +29,38 @@ s only consists of a, b or c characters.
 
 """
 
+from itertools import combinations
 
-def numberOfSubstrings(s):
-    valid_substring_count = 0
 
-    def char_is_accepted(char: str):
-        if char == 'a':
-            return True
+class Solution:
+    def __init__(self) -> None:
+        self.sub_count = 0
 
-        elif char == 'b':
-            return True
-        elif char == 'c':
-            return True
+    def numberOfSubstrings(self, s: str) -> int:
+        def get_all_substrings(string):
+            length = len(string) + 1
+            return [string[x:y] for x, y in combinations(range(length), r=2)]
 
-        else:
-            return False
+        subs = get_all_substrings(s)
+        for sub in subs:
+            if 'a' in sub and 'b' in sub and 'c' in sub:
+                self.sub_count += 1
+        return self.sub_count
 
-    return valid_substring_count
+
+def number_of_sub_strings(s: str):
+    left = ans = curr = 0
+
+    for right in range(len(arr)):
+        # do logic here to add arr[right] to curr
+
+        while WINDOW_CONDITION_BROKEN:
+            # remove arr[left] from curr
+            left += 1
+
+        # update ans
+
+    return ans
+
+
+print(Solution().numberOfSubstrings("abcabc"))  # => 10
