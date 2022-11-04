@@ -43,14 +43,23 @@ At most 104 calls will be made to next.
 """
 
 
-class MovingAverage:
+import collections
 
-    def __init__(self, size: int):
-        pass
 
-    def next(self, val: int) -> float:
-        pass
+class MovingAverage(object):
 
-        # Your MovingAverage object will be instantiated and called as such:
-        # obj = MovingAverage(size)
-        # param_1 = obj.next(val)
+    def __init__(self, size):
+        """
+        Initialize your data structure here.
+        :type size: int
+        """
+        self.queue = collections.deque(maxlen=size)
+
+    def next(self, val):
+        """
+        :type val: int
+        :rtype: float
+        """
+        queue = self.queue
+        queue.append(val)
+        return float(sum(queue))/len(queue)
