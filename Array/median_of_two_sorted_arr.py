@@ -41,4 +41,4 @@ nums2.length == n
 
 
 def findMedianSortedArrays(nums1: list, nums2: list) -> float:
-    pass
+    #
