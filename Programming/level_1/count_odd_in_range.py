@@ -45,14 +45,12 @@ Related Topics
 
 
 class Solution:
-
     def countOdds(self, low: int, high: int) -> int:
-        odd_count = 0
+        res = int((high - low) / 2)
 
-        for i in range(low, high + 1):
-
-            if i % 2 != 0:
-
-                odd_count += 1
-
-        return odd_count
+        def is_even(num: int):
+            return num % 2 == 0
+        if is_even(low) and is_even(high):
+            return res
+        else:
+            return res + 1
