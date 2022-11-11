@@ -10,7 +10,13 @@ company
 Tesla
 company
 Adobe
-Given an integer array nums, return the largest perimeter of a triangle with a non-zero area, formed from three of these lengths. If it is impossible to form any triangle of a non-zero area, return 0.
+
+Given an integer array nums,
+
+return the largest perimeter of a triangle with a non-zero area,
+
+formed from three of these lengths.
+If it is impossible to form any triangle of a non-zero area, return 0.
 
 
 
@@ -44,6 +50,17 @@ Related Topics
 """
 
 
-class Solution:
-    def largestPerimeter(self, nums) -> int:
-        pass
+def largestPerimeter(nums) -> int:
+    # Iterate through the arr of nums. Find the highest perimeter number that have an area == 0 n1 * n2 * n3 = 0
+    # triange in-equality a+b > c
+    # sum of 2 smallest > largest
+    nums.sort(reverse=True)
+    a, b, c = inf, inf, inf
+    for n in nums:
+        a, b, c = n, a, b
+        if a + b > c:
+            return a+b+c
+    return 0
+
+
+largestPerimeter([2, 1, 2])  # => 5
