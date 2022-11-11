@@ -44,15 +44,10 @@ points[i].length == 2
 
 class Solution:
     def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
-        smallest_manhattan = float('inf')
-        valid_points = {}
-        for i, arr in enumerate(points):
-            temp_distance = abs(x - arr[0]) + abs(y - arr[1])
-            smallest_manhattan = min(temp_distance, smallest_manhattan)
-            if arr[0] == x or arr[1] == y:
-                valid_points[i] = smallest_manhattan
-        sorted_d = sorted(valid_points.items(), key=operator.itemgetter(1))
-        if not valid_points:
-            return -1
-        else:
-            return sorted_d[0][0]
+        index, smallest = -1, math.inf
+        for i, (r, c) in enumerate(points):
+            dx, dy = x - r, y - c
+            if dx * dy == 0 and abs(dx + dy) < smallest:
+                smallest = abs(dx + dy)
+                index = i
+        return index
