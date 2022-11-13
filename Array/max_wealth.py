@@ -50,4 +50,17 @@ n == accounts[i].length
 
 
 def maximumWealth(accounts):
-    max_wealth
+    max_seen = 0
+    for account in accounts:
+        account_total = 0
+        for item in account:
+            account_total += item
+        max_seen = max(max_seen, account_total)
+
+    return max_seen
+
+# best python solution
+
+
+def maximum_wealth(accounts):
+    return max(map(sum, accounts))
