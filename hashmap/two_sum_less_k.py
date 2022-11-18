@@ -47,13 +47,12 @@ No
 
 def twoSumLessThanK(nums: list[int], k: int):
     max_seen_sum = -1
-       for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                if nums[i] + nums[j] < k:
-                    max_seen_sum = max(max_seen_sum, nums[i] + nums[j])
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] < k:
+                max_seen_sum = max(max_seen_sum, nums[i] + nums[j])
 
-
-        return max_seen_sum
+    return max_seen_sum
 
 
 twoSumLessThanK([34, 23, 1, 24, 75, 33, 54, 8], 60)
