@@ -51,6 +51,8 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# First attempt, niave approach
+
 
 def max_depth(root: TreeNode) -> int:
     def dfs(root, depth=0):
@@ -59,3 +61,11 @@ def max_depth(root: TreeNode) -> int:
         return max(dfs(root.left, depth + 1), dfs(root.right, depth + 1))
 
     return dfs(root)
+
+
+def maxDepth(root: TreeNode):
+    if root == None:
+        return 0
+    left = self.maxDepth(root.left)
+    right = self.maxDepth(root.right)
+    return max(left, right) + 1
