@@ -42,13 +42,14 @@ s1 and s2 consist of only lowercase English letters.
 
 """
 
+from collections import Counter
 
 def areAlmostEqual(s1: str, s2: str) -> bool:
     count = 0
-       for ch1, ch2 in zip(s1, s2):
-            if ch1 != ch2:
-                count += 1
-        return (Counter(s1) == Counter(s2)) and (count == 0 or count == 2)
+    for ch1, ch2 in zip(s1, s2):
+        if ch1 != ch2:
+            count += 1
+    return (Counter(s1) == Counter(s2)) and (count == 0 or count == 2)
 
 
 areAlmostEqual("bank", "kanb")

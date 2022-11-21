@@ -51,7 +51,7 @@ def sumOddLengthSubarrays(arr: list):
         for j in range(i):
             if len(arr[j: i]) % 2 != 0:
                 odd_arr_total += sum(arr[j: i])
-    print(odd_arr_total)
+    
     return odd_arr_total
 
 
