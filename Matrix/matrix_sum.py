@@ -62,6 +62,7 @@ def check_valid(matrix: list[list[int]]):
             if curr not in valid_set or curr in curr_column_seen:
                 return False
             curr_column_seen.add(curr)
+        print('hello world')
 
     return True
 
