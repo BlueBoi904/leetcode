@@ -59,9 +59,33 @@ No
 
 """
 
+# First attempt successfull, 98% Time Complexity.
+
 
 def find_winners(matches: list[list[int]]):
-    pass
+    loss_counts = {}
+    ans = [[], []]
+
+    for match in matches:
+        match_winner = match[0]
+        match_loser = match[1]
+
+        if match_winner not in loss_counts:
+            loss_counts[match_winner] = 0
+
+        if match_loser in loss_counts:
+            loss_counts[match_loser] += 1
+        else:
+            loss_counts[match_loser] = 1
+    for key in loss_counts:
+        if loss_counts[key] == 0:
+            ans[0].append(key)
+
+        if loss_counts[key] == 1:
+            ans[1].append(key)
+    ans[0].sort()
+    ans[1].sort()
+    return ans
 
 
 find_winners([[1, 3], [2, 3], [3, 6], [5, 6], [5, 7], [
