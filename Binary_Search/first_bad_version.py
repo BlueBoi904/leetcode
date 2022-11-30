@@ -45,5 +45,4 @@ def firstBadVersion(n: int):
         if isBadVersion(mid):
             first_bad = mid
         else:
-
-    return first_bad
+            return first_bad

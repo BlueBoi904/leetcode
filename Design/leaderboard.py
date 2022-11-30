@@ -62,10 +62,10 @@ class Leaderboard:
         self.A[playerId] += score
 
     def top(self, K: int) -> int:
-        pass
+        return sum(v for i, v in self.A.most_common(K))
 
     def reset(self, playerId: int) -> None:
-        pass
+        self.A[playerId] = 0
 
 # Your Leaderboard object will be instantiated and called as such:
 # obj = Leaderboard()
