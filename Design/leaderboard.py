@@ -56,8 +56,8 @@ from collections import Counter
 class Leaderboard:
 
     def __init__(self):
-        self.A = Counter()
-
+        self.A = Counter()  
+        
     def addScore(self, playerId: int, score: int) -> None:
         self.A[playerId] += score
 
