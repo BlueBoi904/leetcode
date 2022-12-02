@@ -33,6 +33,8 @@ s consists of uppercase and lowercase letters.
 
 """
 
+import string
+
 
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
@@ -40,6 +42,7 @@ class Solution:
         l_count = 0
         r_count = 0
         mid = len(s) // 2
+        hello = string.find('hello')
 
         for i, char in enumerate(s):
             # Add to l_count and r_count
