@@ -43,14 +43,6 @@ It's guaranteed that val does not exist in the original BST.
 
 """
 
-# Definition for a binary tree node.
-
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
 
 # Binary Tree =>
 
@@ -86,9 +78,21 @@ Following is an example of a binary search tree that satisfies all the propertie
 
 """
 
-#
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 def insert_into_bst(root: TreeNode, val: int):
+    if root is None:
+        return TreeNode(val)
 
-    pass
+    if root.val > val:
+        root.left = insert_into_bst(root.left, val)
+    elif root.val < val:
+        root.right = insert_into_bst(root.right, val)
+
+    return root
