@@ -56,3 +56,32 @@ class Solution:
         dfs(root)
 
         return self.total_sum
+
+
+# Faster solution
+
+class Solution:
+    def rangeSumBST(self, root: TreeNode, low: int, high: int) -> int:
+        if root == None:
+            return 0
+        if (root.val < low or root.val > high):
+            return self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
+        else:
+            return root.val + self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
+
+
+# Using stack
+
+def rangeSumBST(self, root: list[TreeNode], low: int, high: int) -> int:
+    r = 0
+    q = [root]
+    while q:
+        c = q.pop()
+        if c:
+            if low <= c.val <= high:
+                r += c.val
+            if c.val > low:
+                q.append(c.left)
+            if c.val < high:
+                q.append(c.right)
+    return r
