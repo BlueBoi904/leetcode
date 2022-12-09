@@ -20,7 +20,7 @@ Two binary trees are considered leaf-similar if their leaf value sequence is the
 
 Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.
 
- 
+
 
 Example 1:
 
@@ -32,7 +32,7 @@ Example 2:
 
 Input: root1 = [1,2,3], root2 = [1,3,2]
 Output: false
- 
+
 
 Constraints:
 
@@ -50,4 +50,11 @@ class TreeNode:
 
 
 def leafSimilar(root1: TreeNode, root2: TreeNode):
-    pass
+    def dfs(node):
+        if node:
+            if not node.left and not node.right:
+                yield node.val
+            yield from dfs(node.left)
+            yield from dfs(node.right)
+
+    return list(dfs(root1)) == list(dfs(root2))
