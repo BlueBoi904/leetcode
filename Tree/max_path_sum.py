@@ -43,21 +43,22 @@ class TreeNode:
         self.right = right
 
 
-class Solution:
-    def __init__(self) -> None:
-        # Keep track of the max seen path sum
-        self.max_sum = 0
+class Solution(object):
+    def maxPathSum(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
 
-    def maxPathSum(self, root: TreeNode):
-        # Traverse the tree and keep track of max sum as we traverse
-        self.dfs(root)
-        return self.max_sum
+        self.msum = float('-inf')
+        self.get_sum(root)
+        return self.msum
 
-    def dfs(self, node: TreeNode, curr_sum=0):
+    def get_sum(self, node):
+        if not node:
+            return 0
 
-        self.max_sum = max(self.max_sum, curr_sum + node.val)
-
-        if node.left:
-            self.dfs(node.left, curr_sum)
-        if node.right:
-            self.dfs(node.right, curr_sum)
+        ls, rs = self.get_sum(node.left), self.get_sum(node.right)
+        max_single_path = max(node.val+max(ls, rs), node.val)
+        self.msum = max(self.msum, max_single_path, node.val+ls+rs)
+        return max_single_path
