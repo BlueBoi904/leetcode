@@ -42,5 +42,6 @@ def max_sum_after_operation(nums: list[int]) -> int:
     pass
 
 
+print('hello world')
 max_sum_after_operation([2, -1, -4, -3])
 max_sum_after_operation([1, -1, 1, 1, -1, -1, 1])
