@@ -35,7 +35,13 @@ def longest_palindrome_subseq(s: str):
     # Track length of longest good palindromic sub.
     longest_pal = 0
 
-    def is_good_pal(s: str):
+    def is_good_pal(sub: str):
+        # Define a good palindrome
+        if sub != sub[::-1]:
+            return False
+
+        if len(sub) % 2 != 0:
+            return False
 
         return True
 

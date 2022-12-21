@@ -38,4 +38,12 @@ class TreeNode:
 
 
 def isValidBST(root: TreeNode):
-    pass
+    def valid(node: TreeNode, low=float('-inf'), high=float('inf')):
+        if node is None:
+            return True
+        if node.val <= low or node.val >= high:
+            return False
+        return (valid(node.right, node.val, high) and
+                valid(node.left, low, node.val))
+
+    return valid(root)
