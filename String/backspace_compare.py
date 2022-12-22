@@ -60,7 +60,5 @@ def backspaceCompare(s, t):
 
     return ''.join(res_t) == ''.join(res_s)
 
-    return s == t
-
 
 backspaceCompare()

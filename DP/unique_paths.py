@@ -24,22 +24,6 @@ Explanation: From the top-left corner, there are a total of 3 ways to reach the 
 
 """
 
-# Possible moves right or down at any point in time.
 
-
-def uniquePaths(m, n):
-
-    dp = [[None for _ in range(n)] for _ in range(m)]
-
-    def dfs(x, y):
-        if x > m-1 or y > n-1:
-            return 0
-        elif dp[x][y]:
-            return dp[x][y]
-        elif x == m-1 and y == n-1:
-            return 1
-        else:
-            dp[x][y] = dfs(x+1, y) + dfs(x, y+1)
-            return dp[x][y]
-
-    return dfs(0, 0)
+def unique_paths(m, n):
+    pass
