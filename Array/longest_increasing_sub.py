@@ -32,6 +32,8 @@ increasing.
 
 """
 
+# 81% Time 85% Memory First Attempt Solution
+
 
 def longest_continuous_sub(nums: list):
     # Keep track of the longest sub_sequence that is continuous increasing
