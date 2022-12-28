@@ -53,5 +53,4 @@ insert into Employee(id, name, salary, managerId) values('4', 'Max', '90000', 'N
 # Write your MySQL query statement below
 select e.Name as Employee
 from Employee e, Employee m
-where e.ManagerId is not NULL and
-e.ManagerId = m.ID and e.Salary > m.Salary
+where e.ManagerId = m.ID and e.Salary > m.Salary
