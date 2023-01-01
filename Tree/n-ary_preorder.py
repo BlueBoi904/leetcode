@@ -53,11 +53,33 @@ class Solution:
         # Preoder is root first, then left subtree then right subtree
         if root is None:
             return []
-
-        stack, res = [root], []
-        while stack:
-            node = stack.pop()
-            res.append(node.val)
-            stack.extend(node.children[::-1])
+        res = []
+        queue = collections.deque([root])
+        while queue:
+            level = []
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                level.append(node.val)
+                queue.extend(node.children)
+            res.append(level)
 
         return res
+
+# Recursive solution
+
+
+class Solution_2:
+    def level_order(self, root):
+
+        def traverse_node(node, level):
+            if len(result) == level:
+                result.append([])
+            result[level].append(node.val)
+            for child in node.children:
+                traverse_node(child, level + 1)
+
+        result = []
+
+        if root is not None:
+            traverse_node(root, 0)
+        return result
