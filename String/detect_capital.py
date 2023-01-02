@@ -20,9 +20,17 @@ Output: false
 
 """
 
+# First quick attempt, very slow memory and time complexity
+
 
 def detect_capital(word: str):
-    pass
+    return word.isupper() or word.islower() or word.istitle()
+
+
+# Optimized attempt
+
+def detectCapital(word: str):
+    return len(word) == 1 or word[1:].islower() or word.isupper()
 
 
 print(detect_capital("USA"))  # => True
