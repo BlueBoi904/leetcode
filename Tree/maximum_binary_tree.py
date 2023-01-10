@@ -34,4 +34,20 @@ Output: [3,null,2,null,1]
 
 
 def construct_maximum_binary_tree(nums: list):
-    pass
+    def construct(l, r):
+        if l > r:
+            return
+        elif l == r:
+            return TreeNode(nums[l])
+        maximum = -float('inf')
+        for i in range(l, r+1):
+            if maximum < nums[i]:
+                maximum = nums[i]
+                max_index = i
+        left = construct(l, max_index-1)
+        right = construct(max_index+1, r)
+        root = TreeNode(maximum)
+        root.left = left
+        root.right = right
+        return root
+    return construct(0, len(nums)-1)
