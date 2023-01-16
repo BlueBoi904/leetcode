@@ -10,7 +10,7 @@ Return names sorted in descending order by the people's heights.
 
 
 def sort_people(names: list[str], heights: list[int]):
-    pass
+    return [x for _, x in sorted(zip(heights, names), reverse=True)]
 
 
 # => ["Mary","Emma","John"]
