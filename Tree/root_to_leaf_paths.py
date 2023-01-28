@@ -14,7 +14,7 @@ Given the root of a binary tree, return all root-to-leaf paths in any order.
 
 A leaf is a node with no children.
 
- 
+
 
 Example 1:
 
@@ -37,4 +37,17 @@ class TreeNode:
 
 
 def binaryTreePaths(root: TreeNode):
-    pass
+    # Use dfs
+    def construct_paths(root, path):
+        if root:
+            path += str(root.val)
+            if not root.left and not root.right:  # if reach a leaf
+                paths.append(path)  # update paths
+            else:
+                path += '->'  # extend the current path
+                construct_paths(root.left, path)
+                construct_paths(root.right, path)
+
+    paths = []
+    construct_paths(root, '')
+    return paths
