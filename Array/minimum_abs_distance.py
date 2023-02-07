@@ -50,6 +50,9 @@ Constraints:
 # First attempt, correct but not quite fast enough.
 
 
+from itertools import pairwise
+
+
 def minimumAbsDifference(arr: list[int]) -> list[list[int]]:
 
     res = []
@@ -71,6 +74,24 @@ def minimumAbsDifference(arr: list[int]) -> list[list[int]]:
                 res.append(curr)
     res.sort(key=lambda x: x[0])
     return res
+
+# Faster solution
+
+
+class Solution:
+    def minimumAbsDifference(self, arr: list[int]) -> list[list[int]]:
+
+        arr.sort()
+        ans = []
+        mi = float('inf')
+        for a, b in pairwise(arr):
+            d = b - a
+            if d < mi:
+                ans = [(a, b)]
+                mi = d
+            elif d == mi:
+                ans.append((a, b))
+        return ans
 
 
 print(minimumAbsDifference([4, 2, 1, 3]))
