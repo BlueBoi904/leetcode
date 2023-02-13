@@ -57,19 +57,11 @@ class Solution:
                 return str(item)
         return ''
 
+# Greedy Solution
+
 
 def largest_odd_number(num: str):
-    last_ind = -1
-
-    # Iterate through all the numbers for finding a odd number that appears on the last.
-    for i, j in enumerate(num[::-1]):
-        if (int(j) % 2 != 0):
-            last_ind = len(num) - i
-            break
-
-    # If there is no odd number, return empty string.
-    if (last_ind == -1):
-        return ""
-
-    # Or return the string upto that index.
-    return (num[:last_ind])
+    for i in reversed(range(len(num))):
+        if int(num[i]) & 1:
+            return num[:i+1]
+    return ""
