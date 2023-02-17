@@ -32,11 +32,36 @@ Output: 5
 """
 
 
-def __init__(self, val=None, children=None):
-    self.val = val
-    self.children = children
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+
+
+class Solution:
+    def maxDepth(self, root: Node) -> int:
+        def traverse_node(node, level):
+            if len(result) == level:
+                result.append([])
+            result[level].append(node.val)
+            for child in node.children:
+                traverse_node(child, level + 1)
+
+        result = []
+
+        if root is not None:
+            traverse_node(root, 0)
+        return len(result)
+
+# Alt solution
 
 
 class Solution:
     def maxDepth(self, root: 'Node') -> int:
-        pass
+
+        if not root:
+            return 0
+        elif root.children:
+            return 1 + max([self.maxDepth(c) for c in root.children])
+        else:
+            return
