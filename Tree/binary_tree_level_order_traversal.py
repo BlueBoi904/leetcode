@@ -31,7 +31,7 @@ def levelOrder(root):
     levels = []
 
     def dfs(node, level=0):
-        if root is None:
+        if node is None:
             return
         if len(levels) == level:
             levels.append([])
