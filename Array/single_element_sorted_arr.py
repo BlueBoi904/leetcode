@@ -35,7 +35,12 @@ Constraints:
 
     """
 
+# First Try
+
 
 class Solution:
     def singleNonDuplicate(self, nums: List[int]) -> int:
-        pass
+        counts = Counter(nums)
+        for count in counts:
+            if counts[count] == 1:
+                return count
