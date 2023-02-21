@@ -3,7 +3,11 @@
 226. Invert Binary Tree
 Easy
 11.7K
+<<<<<<< HEAD
+162
+=======
 163
+>>>>>>> b1d269a7a7a0e8e5a0a5113738428665e879d5ab
 company
 Amazon
 company
@@ -12,7 +16,11 @@ company
 Facebook
 Given the root of a binary tree, invert the tree, and return its root.
 
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> b1d269a7a7a0e8e5a0a5113738428665e879d5ab
 
 Example 1:
 
@@ -28,7 +36,11 @@ Example 3:
 
 Input: root = []
 Output: []
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> b1d269a7a7a0e8e5a0a5113738428665e879d5ab
 
 Constraints:
 
@@ -46,6 +58,10 @@ class TreeNode:
 
 
 class Solution:
+<<<<<<< HEAD
+    def invertTree(self, root: [TreeNode]):
+        pass
+=======
     def maxDepth(self, root: TreeNode) -> int:
 
         if not root:
@@ -54,3 +70,4 @@ class Solution:
             return 1 + max([self.maxDepth(c) for c in root.children])
         else:
             return
+>>>>>>> b1d269a7a7a0e8e5a0a5113738428665e879d5ab
