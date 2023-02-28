@@ -12,7 +12,7 @@ Note:
 
 A letter a appears twice before another letter b if the second occurrence of a is before the second occurrence of b.
 s will contain at least one letter that appears twice.
- 
+
 
 Example 1:
 
@@ -30,7 +30,7 @@ Input: s = "abcdd"
 Output: "d"
 Explanation:
 The only letter that appears twice is 'd' so we return 'd'.
- 
+
 
 Constraints:
 
@@ -38,7 +38,7 @@ Constraints:
 s consists of lowercase English letters.
 s has at least one repeated letter.
 
-    """
+"""
 
 
 class Solution:
