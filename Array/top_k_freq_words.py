@@ -1,6 +1,5 @@
 """
 
-<<<<<<< HEAD
 692. Top K Frequent Words
 Medium
 5.3K
@@ -11,8 +10,6 @@ company
 Uber
 company
 Bloomberg
-=======
->>>>>>> cf51ad380537965b083851501812a42f8083dc0a
 Given an array of strings words and an integer k, return the k most frequent strings.
 
 Return the answer sorted by the frequency from highest to lowest. Sort the words with the same frequency by their lexicographical order.
