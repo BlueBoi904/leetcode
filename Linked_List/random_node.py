@@ -48,6 +48,9 @@ Could you solve this efficiently without using extra space?
     """
 
 
+import random
+
+
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -62,7 +65,7 @@ class Solution:
         self.vals = []
 
     def getRandom(self) -> int:
-        pass
+        return random.choice(self.vals)
 
     def traverse(self, node):
         temp = node
@@ -71,4 +74,4 @@ class Solution:
             self.vals.append(temp.val)
             temp = temp.next
 
-        print(self.vals)
+        return
