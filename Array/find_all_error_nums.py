@@ -1,5 +1,5 @@
 class Solution:
-    def findErrorNums(self, nums: List[int]) -> List[int]:
+    def findErrorNums(self, nums: list[int]) -> list[int]:
         # [1] sum of all numbers from 1 to n
         s = len(nums)*(len(nums)+1) // 2
 
