@@ -40,18 +40,7 @@ def sortedSquares(nums: list):
 
 
 def sorted_squares(nums: list):
-    n = len(nums)
-    i, j = 0, n-1
-    res = []
-    while i <= j:
-        if abs(nums[i]) < abs(nums[j]):
-            res.append(nums[j]**2)
-            j -= 1
-        else:
-            res.append(nums[i]**2)
-            i += 1
-
-    return list(reversed(res))
+    return sorted([n*n for n in nums])
 
 
 print(sorted_squares([-4, -1, 0, 3, 10]))
