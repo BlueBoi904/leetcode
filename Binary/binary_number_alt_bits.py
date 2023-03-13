@@ -35,6 +35,8 @@ Accepted
 
 
 """
+# Hello world
+
 
 def hasAlternatingBits(n: int) -> bool:
     pass
