@@ -50,4 +50,4 @@ class Solution:
                 seen_char.add(char)
             else:
                 # Seen this char already, return char
-                return char
+                return char 
