@@ -69,8 +69,6 @@ def getLonelyNodes(root):
     dfs(root)
     return res
 
-# Iterive solution
-
 
 def get_lonely_nodes(root: TreeNode):
     stk = [root]
