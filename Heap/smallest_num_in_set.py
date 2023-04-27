@@ -1,4 +1,8 @@
+import heapq
+
 # Heap solution
+
+# Docs => https://docs.python.org/3/library/heapq.html
 
 class SmallestInfiniteSet:
 
