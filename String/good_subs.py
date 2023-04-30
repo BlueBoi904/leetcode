@@ -42,6 +42,8 @@ s​​​​​​ consists of lowercase English letters.
 
 from collections import Counter
 
+# First attempt
+
 def count_good_subs(s: str):
     subs = []
     count = 0
