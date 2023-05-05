@@ -68,7 +68,6 @@ const flat = function (arr, n) {
 };
 
 // Without using arr.flat()
-
 const flatten = function (arr, n) {
     const result = []
 
