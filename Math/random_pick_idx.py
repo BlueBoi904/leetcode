@@ -11,9 +11,11 @@ class Solution:
 
     def pick(self, target: int) -> int:
         res = [i for i, x in enumerate(self.nums) if x == target]
-        return  random.choice(res)
+        return random.choice(res)
 
 # Optimized solution
+
+
 class Solution:
 
     def __init__(self, nums: List[int]):
@@ -23,4 +25,7 @@ class Solution:
 
     def pick(self, target: int) -> int:
         return random.choice(self.nums[target])
-        
+
+
+def func(arr: list):
+    pass
