@@ -39,22 +39,22 @@ Follow up: Could you do it without any loop/recursion in O(1) runtime?
 
 # First atttempt solution, passes!
 
+
 def add_digits(num: int) -> int:
     # Create a base case
     if len(str(num)) == 1:
         return num
     curr_sum = 0
-    for digit in str(num): 
-      curr_sum += int(digit)      
+    for digit in str(num):
+        curr_sum += int(digit)
     return add_digits(curr_sum)
 
-
-    
 
 print(add_digits(38))
 print(add_digits(0))
 
 # Faster solution
+
 
 def addDigits(num: int):
     return 1 + (num - 1) % 9 if num else 0
