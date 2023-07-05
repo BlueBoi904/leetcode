@@ -50,15 +50,16 @@ import random
 
 
 class Solution:
-
     def __init__(self, nums: list[int]):
         self.nums = nums
         self.copy = nums.copy()
 
     def reset(self) -> list[int]:
-
         return self.nums
 
     def shuffle(self) -> list[int]:
         random.shuffle(self.copy)
         return self.copy
+
+
+print("hello world")
