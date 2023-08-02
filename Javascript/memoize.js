@@ -1,6 +1,5 @@
 function memoize(fn) {
     var cache = {};
-
     return function (...args) {
         let key = String(args);
 
