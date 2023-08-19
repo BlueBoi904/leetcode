@@ -39,3 +39,8 @@ def maxProfit(prices: list, fee: int):
         cash = max(cash, hold + prices[i] - fee)
         hold = max(hold, cash - prices[i])
     return cash
+
+def hello_world(message: str ):
+    print(message)
+
+hello_world("Hello World")
