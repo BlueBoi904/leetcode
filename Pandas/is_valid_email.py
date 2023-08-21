@@ -5,7 +5,7 @@ import re
 # First attempt
 def is_valid_email(email: str):
     domain = '@leetcode.com'
-    regex_pattern = "^[a-zA-Z0-9-_\.]+$"
+    regex_pattern = "^[a-zA-Z][a-zA-Z0-9._-]+$"
     if not email[0].isalpha():
         return False
     elif not email.endswith(domain):
