@@ -1,5 +1,8 @@
 from collections import Counter
-class Solution:
-    def checkIfPangram(self, sentence: str) -> bool:
-        counts = Counter(sentence)
-        return len(counts.keys()) == 26
+
+
+def check_if_pangram(sentence: str) -> bool:
+    counts = Counter(sentence)
+    return len(counts.keys()) == 26
+
+
