@@ -30,6 +30,7 @@ Constraints:
 text consists of lower case English letters only.
 
 """
-
+from collections import Counter
 def max_num_of_baloons(text: str):
-    pass
+    cnt = Counter(text)
+    return min([cnt['b'], cnt['a'], cnt['n'], cnt['l'] // 2, cnt['o'] // 2])
