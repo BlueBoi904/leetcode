@@ -26,12 +26,12 @@ All the characters of jewels are unique.
 
 from collections import Counter
 
-def jewels_in_stones( jewels: str, stones: str) -> int:
+
+def jewels_in_stones(jewels: str, stones: str) -> int:
     count = 0
     j_counts = Counter(jewels)
     s_counts = Counter(stones)
-    print(s_counts)
-    print(j_counts)
+
     for item in j_counts:
         if item in s_counts:
             count += s_counts[item]
