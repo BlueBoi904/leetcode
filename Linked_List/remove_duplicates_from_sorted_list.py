@@ -4,5 +4,14 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 def delete_duplicates(head: [ListNode]) -> [ListNode]:
-    pass
+    if head is None:
+        return head
+    fast = head.next
+    slow = head
+    while fast:
+        fast = fast.next
+        slow = slow.next
+
+

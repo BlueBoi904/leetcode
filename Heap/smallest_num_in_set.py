@@ -19,7 +19,7 @@ class SmallestInfiniteSet:
     def addBack(self, num: int) -> None:
         if self.min_num>num and num not in self.heap:
             heapq.heappush(self.heap,num)
-
+# hello world
 
 # Your SmallestInfiniteSet object will be instantiated and called as such:
 # obj = SmallestInfiniteSet()
