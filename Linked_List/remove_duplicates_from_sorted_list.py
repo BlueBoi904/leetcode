@@ -6,12 +6,12 @@ class ListNode:
 
 
 def delete_duplicates(head: [ListNode]) -> [ListNode]:
-    if head is None:
-        return head
-    fast = head.next
-    slow = head
-    while fast:
-        fast = fast.next
-        slow = slow.next
+    cur = head
+    while cur and cur.next:
+        if cur.val == cur.next.val:
+            cur.next = cur.next.next
+        else:
+            cur = cur.next
+    return head
 
 
