@@ -30,6 +30,8 @@ def is_valid(s: str):
     return not stack
 
 
+# T(c) => O(n), S(c) => O(n)
+
 print(is_valid("({})"))  # => True
 
 print(is_valid("(){}[]"))  # => True
