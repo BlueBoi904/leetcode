@@ -1,15 +1,16 @@
-
-
 def min_abs_diff(root):
-    if not root:
-        return 0
+    def dfs(node):
+        if not node:
+            return
 
-    ans = 0
-    if low <= root.val <= high:
-        ans += root.val
-    if low < root.val:
-        ans += self.rangeSumBST(root.left, low, high)
-    if root.val < high:
-        ans += self.rangeSumBST(root.right, low, high)
+        left = dfs(node.left)
+        values.append(node.val)
+        right = dfs(node.right)
+
+    values = []
+    dfs(root)
+    ans = float("inf")
+    for i in range(1, len(values)):
+        ans = min(ans, values[i] - values[i - 1])
 
     return ans
