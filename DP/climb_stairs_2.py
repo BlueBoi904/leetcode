@@ -1,6 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        def climb(n):  # inner function to make code simpler
+        def climb(n):  # inner function to simplify the code
             if n in cache:
                 return cache[n]
             else:
