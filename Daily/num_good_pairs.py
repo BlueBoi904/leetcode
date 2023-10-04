@@ -8,3 +8,4 @@ class Solution:
             counts[num] += 1
 
         return ans
+        
