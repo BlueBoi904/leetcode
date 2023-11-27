@@ -11,15 +11,15 @@ For example, given nums = [3, 6, 1, 2, 5] and k = 2, the answer is 2. The subseq
 """
 
 
-class Solution:
-    def partitionArray(self, nums: list[int], k: int) -> int:
-        nums.sort()
-        ans = 1
-        x = nums[0]
+def partition_array(nums: list[int], k: int) -> int:
+    nums.sort()
+    ans = 1
+    x = nums[0]
 
-        for i in range(1, len(nums)):
-            if nums[i] - x > k:
-                x = nums[i]
-                ans += 1
+    for i in range(1, len(nums)):
+        if nums[i] - x > k:
+            x = nums[i]
+            ans += 1
 
-        return ans
+    return ans
+
