@@ -1,11 +1,16 @@
-class Solution:
-    def numIdenticalPairs(self, nums: List[int]) -> int:
-        counts = defaultdict(int)
-        ans = 0
+from collections import defaultdict
 
-        for num in nums:
-            ans += counts[num]
-            counts[num] += 1
 
-        return ans
+def num_identical_pairs(nums: list[int]) -> int:
+    counts = defaultdict(int)
+    ans = 0
+
+    for num in nums:
+        ans += counts[num]
+        counts[num] += 1
+
+    return ans
+
+
+
         
