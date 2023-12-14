@@ -10,7 +10,3 @@ def num_identical_pairs(nums: list[int]) -> int:
         counts[num] += 1
 
     return ans
-
-
-
-        
